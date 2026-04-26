@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://127.0.0.1:5500/birthday.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday, Akshitaaa 🎂</title>
+<link href="./Happy Birthday, Akshitaaa 🎂_files/css2" rel="stylesheet">
+<style>
+  :root {
+    --rose: #e8476a;
+    --blush: #f9c6d0;
+    --cream: #fff8f0;
+    --gold: #f0c060;
+    --deep: #2d1a2e;
+    --soft: #7a4060;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--cream);
+    font-family: 'Lato', sans-serif;
+    color: var(--deep);
+    overflow-x: hidden;
+  }
+
+  /* ── CONFETTI ── */
+  .confetti-wrap {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+  .dot {
+    position: absolute;
+    top: -20px;
+    border-radius: 50%;
+    animation: fall linear infinite;
+    opacity: 0.75;
+  }
+  @keyframes fall {
+    0%   { transform: translateY(0) rotate(0deg); opacity: 0.9; }
+    100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    background: radial-gradient(ellipse at 50% 0%, #ffe0ea 0%, var(--cream) 60%);
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--rose);
+    border: 1.5px solid var(--rose);
+    padding: 6px 18px;
+    border-radius: 100px;
+    margin-bottom: 32px;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 9vw, 7rem);
+    line-height: 1.05;
+    color: var(--deep);
+    animation: fadeUp 0.9s 0.15s ease both;
+  }
+  h1 em {
+    font-style: italic;
+    color: var(--rose);
+  }
+
+  .subtitle {
+    margin-top: 20px;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    font-weight: 300;
+    color: var(--soft);
+    max-width: 500px;
+    line-height: 1.7;
+    animation: fadeUp 1s 0.3s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── CAKE ── */
+  .cake-section {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px 80px;
+    background: linear-gradient(180deg, var(--cream) 0%, #fde8ef 100%);
+  }
+
+  .cake {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: float 3.5s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-14px); }
+  }
+
+  /* candles */
+  .candles {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 6px;
+    align-items: flex-end;
+  }
+  .candle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .flame {
+    width: 12px;
+    height: 20px;
+    background: radial-gradient(ellipse at 50% 70%, #fff176 20%, #ffb300 60%, #ff6f00 100%);
+    border-radius: 50% 50% 40% 40%;
+    animation: flicker 0.4s ease-in-out infinite alternate;
+    box-shadow: 0 0 8px 4px rgba(255,160,0,0.5);
+    margin-bottom: 2px;
+  }
+  @keyframes flicker {
+    0%   { transform: scaleX(1) scaleY(1) rotate(-3deg); }
+    100% { transform: scaleX(0.8) scaleY(1.15) rotate(3deg); }
+  }
+  .wick {
+    width: 3px;
+    height: 8px;
+    background: #5d3a1a;
+    border-radius: 2px;
+  }
+  .candle-body {
+    width: 14px;
+    height: 50px;
+    border-radius: 4px 4px 2px 2px;
+  }
+
+  /* tiers */
+  .tier {
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+  }
+  .tier::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    right: 0;
+    height: 14px;
+    background: rgba(255,255,255,0.35);
+    border-radius: 12px 12px 0 0;
+  }
+
+  .tier-top {
+    width: 140px;
+    height: 70px;
+    background: linear-gradient(135deg, #f48fb1, #e91e8c);
+    border: 3px solid #fff;
+    margin-top: -2px;
+  }
+  .tier-mid {
+    width: 200px;
+    height: 80px;
+    background: linear-gradient(135deg, #fff176, #f9a825);
+    border: 3px solid #fff;
+    margin-top: -2px;
+  }
+  .tier-bot {
+    width: 260px;
+    height: 90px;
+    background: linear-gradient(135deg, #f06292, #c2185b);
+    border: 3px solid #fff;
+  }
+
+  .dots {
+    display: flex;
+    gap: 8px;
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .dot-deco {
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.85;
+  }
+
+  .plate {
+    width: 290px;
+    height: 22px;
+    background: linear-gradient(180deg, #f8d7da, #f0b8be);
+    border-radius: 50%;
+    margin-top: -4px;
+    box-shadow: 0 8px 24px rgba(200,60,100,0.25);
+  }
+
+  /* ── MESSAGE ── */
+  .message-section {
+    position: relative;
+    z-index: 1;
+    background: var(--deep);
+    color: white;
+    padding: 90px 20px;
+    text-align: center;
+  }
+
+  .message-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 400;
+    margin-bottom: 36px;
+    color: var(--gold);
+  }
+
+  .message-box {
+    max-width: 680px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 20px;
+    padding: 48px 44px;
+    font-size: 1.15rem;
+    line-height: 2;
+    font-weight: 300;
+    color: rgba(255,255,255,0.88);
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+  }
+
+  .hearts {
+    margin-top: 32px;
+    font-size: 1.8rem;
+    letter-spacing: 10px;
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50%       { transform: scale(1.15); }
+  }
+
+  /* ── PHOTOS ── */
+  .photos-section {
+    position: relative;
+    z-index: 1;
+    padding: 90px 20px;
+    background: linear-gradient(180deg, #fde8ef 0%, var(--cream) 100%);
+    text-align: center;
+  }
+
+  .photos-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    color: var(--deep);
+    margin-bottom: 12px;
+  }
+  .photos-section p {
+    color: var(--soft);
+    font-size: 0.95rem;
+    margin-bottom: 50px;
+  }
+
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .photo-card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 4/5;
+    background: #f0d0da;
+    box-shadow: 0 8px 32px rgba(200,60,100,0.15);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    cursor: pointer;
+  }
+  .photo-card:hover {
+    transform: translateY(-8px) rotate(1deg);
+    box-shadow: 0 20px 48px rgba(200,60,100,0.25);
+  }
+
+  .photo-card img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .photo-placeholder {
+    width: 100%; height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+    color: var(--soft);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 20px;
+    text-align: center;
+  }
+  .photo-placeholder span { font-size: 2.5rem; }
+
+  .photo-caption {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 20px 16px 14px;
+    background: linear-gradient(to top, rgba(45,26,46,0.85) 0%, transparent 100%);
+    color: white;
+    font-size: 0.8rem;
+    font-style: italic;
+    font-family: 'Playfair Display', serif;
+  }
+
+  /* ── FILE UPLOAD ── */
+  .upload-area {
+    max-width: 500px;
+    margin: 40px auto 0;
+    border: 2px dashed var(--rose);
+    border-radius: 16px;
+    padding: 30px;
+    cursor: pointer;
+    text-align: center;
+    color: var(--rose);
+    font-size: 0.9rem;
+    transition: background 0.2s;
+  }
+  .upload-area:hover { background: rgba(232,71,106,0.06); }
+  .upload-area input { display: none; }
+  .upload-area .upload-icon { font-size: 2rem; margin-bottom: 8px; }
+
+  /* ── FOOTER ── */
+  .footer {
+    position: relative;
+    z-index: 1;
+    background: var(--deep);
+    padding: 60px 20px;
+    text-align: center;
+    color: rgba(255,255,255,0.5);
+    font-size: 0.85rem;
+  }
+  .footer strong {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<!-- CONFETTI -->
+<div class="confetti-wrap" id="confetti"><div class="dot" style="width: 8.2603px; height: 8.2603px; background: rgb(232, 71, 106); left: 53.5381%; animation-duration: 7.89995s; animation-delay: 3.87923s; border-radius: 3px;"></div><div class="dot" style="width: 7.16232px; height: 7.16232px; background: rgb(244, 143, 177); left: 20.9436%; animation-duration: 9.41364s; animation-delay: 4.46403s; border-radius: 50%;"></div><div class="dot" style="width: 9.64501px; height: 9.64501px; background: rgb(165, 214, 167); left: 17.8611%; animation-duration: 9.00913s; animation-delay: 6.34075s; border-radius: 3px;"></div><div class="dot" style="width: 14.3781px; height: 14.3781px; background: rgb(128, 222, 234); left: 92.7419%; animation-duration: 6.09241s; animation-delay: 0.129422s; border-radius: 3px;"></div><div class="dot" style="width: 12.8439px; height: 12.8439px; background: rgb(244, 143, 177); left: 43.7969%; animation-duration: 8.98593s; animation-delay: 7.56084s; border-radius: 3px;"></div><div class="dot" style="width: 12.8355px; height: 12.8355px; background: rgb(255, 241, 118); left: 15.9622%; animation-duration: 10.6051s; animation-delay: 6.71193s; border-radius: 50%;"></div><div class="dot" style="width: 8.14837px; height: 8.14837px; background: rgb(128, 222, 234); left: 50.5487%; animation-duration: 9.83152s; animation-delay: 4.62535s; border-radius: 50%;"></div><div class="dot" style="width: 5.78992px; height: 5.78992px; background: rgb(255, 241, 118); left: 98.5534%; animation-duration: 5.33099s; animation-delay: 3.65687s; border-radius: 3px;"></div><div class="dot" style="width: 9.49184px; height: 9.49184px; background: rgb(232, 71, 106); left: 79.5693%; animation-duration: 6.23182s; animation-delay: 0.76632s; border-radius: 50%;"></div><div class="dot" style="width: 14.0014px; height: 14.0014px; background: rgb(240, 192, 96); left: 37.3968%; animation-duration: 6.83447s; animation-delay: 5.14145s; border-radius: 3px;"></div><div class="dot" style="width: 9.71378px; height: 9.71378px; background: rgb(128, 222, 234); left: 30.4902%; animation-duration: 9.90675s; animation-delay: 7.96008s; border-radius: 50%;"></div><div class="dot" style="width: 14.8085px; height: 14.8085px; background: rgb(255, 241, 118); left: 35.5956%; animation-duration: 8.24287s; animation-delay: 3.52786s; border-radius: 3px;"></div><div class="dot" style="width: 7.52628px; height: 7.52628px; background: rgb(206, 147, 216); left: 3.59698%; animation-duration: 10.1391s; animation-delay: 7.04215s; border-radius: 3px;"></div><div class="dot" style="width: 12.2739px; height: 12.2739px; background: rgb(240, 192, 96); left: 20.1205%; animation-duration: 7.88916s; animation-delay: 3.6118s; border-radius: 50%;"></div><div class="dot" style="width: 5.62616px; height: 5.62616px; background: rgb(128, 222, 234); left: 71.3834%; animation-duration: 7.21679s; animation-delay: 5.63746s; border-radius: 3px;"></div><div class="dot" style="width: 10.7629px; height: 10.7629px; background: rgb(165, 214, 167); left: 20.6662%; animation-duration: 6.1735s; animation-delay: 3.05075s; border-radius: 3px;"></div><div class="dot" style="width: 5.73908px; height: 5.73908px; background: rgb(128, 222, 234); left: 70.8786%; animation-duration: 5.04938s; animation-delay: 4.64917s; border-radius: 50%;"></div><div class="dot" style="width: 9.12541px; height: 9.12541px; background: rgb(128, 222, 234); left: 8.27926%; animation-duration: 6.27881s; animation-delay: 1.01305s; border-radius: 50%;"></div><div class="dot" style="width: 7.91721px; height: 7.91721px; background: rgb(232, 71, 106); left: 41.4319%; animation-duration: 7.21909s; animation-delay: 3.63275s; border-radius: 50%;"></div><div class="dot" style="width: 5.58592px; height: 5.58592px; background: rgb(206, 147, 216); left: 22.0317%; animation-duration: 10.7109s; animation-delay: 3.57377s; border-radius: 3px;"></div><div class="dot" style="width: 10.8898px; height: 10.8898px; background: rgb(232, 71, 106); left: 0.329713%; animation-duration: 8.51572s; animation-delay: 3.83672s; border-radius: 50%;"></div><div class="dot" style="width: 5.58652px; height: 5.58652px; background: rgb(244, 143, 177); left: 54.5454%; animation-duration: 7.21363s; animation-delay: 2.19814s; border-radius: 50%;"></div><div class="dot" style="width: 10.9107px; height: 10.9107px; background: rgb(244, 143, 177); left: 75.2055%; animation-duration: 9.15044s; animation-delay: 7.74814s; border-radius: 50%;"></div><div class="dot" style="width: 8.66916px; height: 8.66916px; background: rgb(206, 147, 216); left: 73.6218%; animation-duration: 6.05249s; animation-delay: 0.335531s; border-radius: 3px;"></div><div class="dot" style="width: 8.62122px; height: 8.62122px; background: rgb(255, 241, 118); left: 32.1897%; animation-duration: 6.93474s; animation-delay: 6.00089s; border-radius: 3px;"></div><div class="dot" style="width: 10.4311px; height: 10.4311px; background: rgb(244, 143, 177); left: 29.2493%; animation-duration: 9.26787s; animation-delay: 3.10293s; border-radius: 3px;"></div><div class="dot" style="width: 12.5799px; height: 12.5799px; background: rgb(206, 147, 216); left: 15.1303%; animation-duration: 9.9869s; animation-delay: 2.93468s; border-radius: 50%;"></div><div class="dot" style="width: 10.0913px; height: 10.0913px; background: rgb(206, 147, 216); left: 12.4446%; animation-duration: 9.78416s; animation-delay: 0.220624s; border-radius: 3px;"></div><div class="dot" style="width: 12.6693px; height: 12.6693px; background: rgb(232, 71, 106); left: 35.4766%; animation-duration: 8.04505s; animation-delay: 1.16018s; border-radius: 50%;"></div><div class="dot" style="width: 8.31409px; height: 8.31409px; background: rgb(206, 147, 216); left: 15.5716%; animation-duration: 5.75628s; animation-delay: 4.92596s; border-radius: 50%;"></div><div class="dot" style="width: 6.26432px; height: 6.26432px; background: rgb(128, 222, 234); left: 68.5191%; animation-duration: 9.40674s; animation-delay: 4.42022s; border-radius: 3px;"></div><div class="dot" style="width: 5.99194px; height: 5.99194px; background: rgb(206, 147, 216); left: 49.2932%; animation-duration: 8.78552s; animation-delay: 6.96112s; border-radius: 3px;"></div><div class="dot" style="width: 13.8597px; height: 13.8597px; background: rgb(232, 71, 106); left: 27.1533%; animation-duration: 8.95542s; animation-delay: 0.334967s; border-radius: 3px;"></div><div class="dot" style="width: 13.1104px; height: 13.1104px; background: rgb(206, 147, 216); left: 21.136%; animation-duration: 10.1101s; animation-delay: 1.49725s; border-radius: 50%;"></div><div class="dot" style="width: 12.6345px; height: 12.6345px; background: rgb(240, 192, 96); left: 91.1318%; animation-duration: 9.54784s; animation-delay: 7.44325s; border-radius: 50%;"></div><div class="dot" style="width: 6.8421px; height: 6.8421px; background: rgb(244, 143, 177); left: 28.4355%; animation-duration: 10.5361s; animation-delay: 0.505957s; border-radius: 3px;"></div><div class="dot" style="width: 14.7952px; height: 14.7952px; background: rgb(165, 214, 167); left: 70.1728%; animation-duration: 8.04368s; animation-delay: 6.18221s; border-radius: 3px;"></div><div class="dot" style="width: 7.00555px; height: 7.00555px; background: rgb(244, 143, 177); left: 29.4525%; animation-duration: 10.8984s; animation-delay: 6.40891s; border-radius: 3px;"></div><div class="dot" style="width: 8.30845px; height: 8.30845px; background: rgb(128, 222, 234); left: 10.6584%; animation-duration: 9.02015s; animation-delay: 1.31463s; border-radius: 50%;"></div><div class="dot" style="width: 11.9945px; height: 11.9945px; background: rgb(255, 241, 118); left: 59.0541%; animation-duration: 8.76003s; animation-delay: 3.2701s; border-radius: 50%;"></div><div class="dot" style="width: 13.9563px; height: 13.9563px; background: rgb(232, 71, 106); left: 88.735%; animation-duration: 8.03406s; animation-delay: 1.53073s; border-radius: 3px;"></div><div class="dot" style="width: 12.75px; height: 12.75px; background: rgb(232, 71, 106); left: 12.4199%; animation-duration: 10.4999s; animation-delay: 1.41022s; border-radius: 3px;"></div><div class="dot" style="width: 8.17859px; height: 8.17859px; background: rgb(240, 192, 96); left: 93.2523%; animation-duration: 6.94595s; animation-delay: 3.78034s; border-radius: 3px;"></div><div class="dot" style="width: 9.33875px; height: 9.33875px; background: rgb(165, 214, 167); left: 59.4963%; animation-duration: 7.32871s; animation-delay: 4.72664s; border-radius: 50%;"></div><div class="dot" style="width: 9.46282px; height: 9.46282px; background: rgb(128, 222, 234); left: 64.392%; animation-duration: 8.45965s; animation-delay: 5.64817s; border-radius: 3px;"></div><div class="dot" style="width: 13.2308px; height: 13.2308px; background: rgb(165, 214, 167); left: 93.2199%; animation-duration: 5.95754s; animation-delay: 1.84025s; border-radius: 3px;"></div><div class="dot" style="width: 9.06351px; height: 9.06351px; background: rgb(244, 143, 177); left: 37.9501%; animation-duration: 6.03485s; animation-delay: 1.67805s; border-radius: 50%;"></div><div class="dot" style="width: 10.4482px; height: 10.4482px; background: rgb(255, 241, 118); left: 55.1138%; animation-duration: 9.58183s; animation-delay: 3.94196s; border-radius: 50%;"></div><div class="dot" style="width: 13.4936px; height: 13.4936px; background: rgb(255, 241, 118); left: 99.7034%; animation-duration: 9.67843s; animation-delay: 0.334167s; border-radius: 3px;"></div><div class="dot" style="width: 6.96113px; height: 6.96113px; background: rgb(128, 222, 234); left: 85.5988%; animation-duration: 10.5455s; animation-delay: 3.47032s; border-radius: 50%;"></div><div class="dot" style="width: 10.2212px; height: 10.2212px; background: rgb(128, 222, 234); left: 32.2594%; animation-duration: 6.12095s; animation-delay: 1.28113s; border-radius: 50%;"></div><div class="dot" style="width: 9.34536px; height: 9.34536px; background: rgb(232, 71, 106); left: 85.8593%; animation-duration: 10.9612s; animation-delay: 2.3985s; border-radius: 50%;"></div><div class="dot" style="width: 8.54115px; height: 8.54115px; background: rgb(128, 222, 234); left: 76.2033%; animation-duration: 7.78223s; animation-delay: 1.65027s; border-radius: 50%;"></div><div class="dot" style="width: 5.53856px; height: 5.53856px; background: rgb(255, 241, 118); left: 50.6627%; animation-duration: 7.68521s; animation-delay: 4.60915s; border-radius: 3px;"></div><div class="dot" style="width: 11.3419px; height: 11.3419px; background: rgb(232, 71, 106); left: 40.2037%; animation-duration: 9.72502s; animation-delay: 7.0868s; border-radius: 3px;"></div></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="tag">✨ Today is your day ✨</div>
+  <h1>Happy<br><em>Birthday,</em><br>Akshitaaa</h1>
+  <p class="subtitle">Every day with you feels like a celebration — but today, the whole world gets to know how special you are.</p>
+</section>
+
+<!-- CAKE -->
+<section class="cake-section">
+  <div class="cake">
+    <!-- candles -->
+    <div class="candles">
+      <div class="candle">
+        <div class="flame"></div>
+        <div class="wick"></div>
+        <div class="candle-body" style="background:linear-gradient(#b39ddb,#7c4dff);"></div>
+      </div>
+      <div class="candle">
+        <div class="flame"></div>
+        <div class="wick"></div>
+        <div class="candle-body" style="background:linear-gradient(#80deea,#00bcd4);height:65px;"></div>
+      </div>
+      <div class="candle">
+        <div class="flame"></div>
+        <div class="wick"></div>
+        <div class="candle-body" style="background:linear-gradient(#f48fb1,#e91e63);"></div>
+      </div>
+      <div class="candle">
+        <div class="flame"></div>
+        <div class="wick"></div>
+        <div class="candle-body" style="background:linear-gradient(#ffe082,#ffc107);height:65px;"></div>
+      </div>
+      <div class="candle">
+        <div class="flame"></div>
+        <div class="wick"></div>
+        <div class="candle-body" style="background:linear-gradient(#a5d6a7,#4caf50);"></div>
+      </div>
+    </div>
+    <!-- tiers -->
+    <div class="tier tier-top">
+      <div class="dots">
+        <div class="dot-deco"></div><div class="dot-deco"></div><div class="dot-deco"></div>
+      </div>
+    </div>
+    <div class="tier tier-mid">
+      <div class="dots">
+        <div class="dot-deco"></div><div class="dot-deco"></div><div class="dot-deco"></div><div class="dot-deco"></div>
+      </div>
+    </div>
+    <div class="tier tier-bot">
+      <div class="dots">
+        <div class="dot-deco"></div><div class="dot-deco"></div><div class="dot-deco"></div><div class="dot-deco"></div><div class="dot-deco"></div>
+      </div>
+    </div>
+    <div class="plate"></div>
+  </div>
+</section>
+
+<!-- MESSAGE -->
+<section class="message-section">
+  <h2>A lill note for uh 💌</h2>
+  <div class="message-box reveal visible" id="personalMessage">
+    <!-- ✏️ EDIT YOUR MESSAGE BELOW -->
+    uh make every ordinary moment feel like magic. Your smile is my favourite thing in the world, and being yours is the greatest gift I've ever known. Today isn't just your birthday — it's a reminder to the universe of how extraordinary you truly are. I love you more than words could ever hold.
+    <!-- ✏️ END OF MESSAGE -->
+  </div>
+  <div class="hearts reveal visible">💖 💗 💖</div>
+</section>
+
+<!-- PHOTOS -->
+<section class="photos-section">
+  <h2 class="reveal visible">Again Happy Birthday to this 👇🏾 chatpati baddie</h2>
+  <p class="reveal visible"></p>
+
+  <div class="photo-grid" id="photoGrid">
+    <!-- Placeholder cards — replace src with your image paths or URLs -->
+    
+    
+    
+  <div class="photo-card reveal visible">
+        <img src="blob:http://127.0.0.1:5500/34c23328-d953-41ca-8252-1d0881ce8fe8" alt="Memory 1">
+        <div class="photo-caption">✨ </div>
+      </div><div class="photo-card reveal visible">
+        <img src="blob:http://127.0.0.1:5500/9514474a-8bf2-48a5-9acc-270c35cc2cff" alt="Memory 1">
+        <div class="photo-caption">✨ </div>
+      </div></div>
+
+  <!-- Upload photos directly in browser -->
+  <label class="upload-area" for="photoUpload">
+    <div class="upload-icon">📁</div>
+    <strong>Click to add your photos</strong>
+    <p style="margin-top:6px;color:var(--soft);">They'll appear in the grid above</p>
+    <input type="file" id="photoUpload" accept="image/*" multiple="">
+  </label>
+</section>
+
+<!-- FOOTER -->
+<div class="footer">
+  <strong>Made with 💖 just for you</strong>
+  Wishing you the most beautiful day, every single year. 🎂
+</div>
+
+<script>
+  /* ── CONFETTI ── */
+  const wrap = document.getElementById('confetti');
+  const colors = ['#e8476a','#f0c060','#a5d6a7','#80deea','#ce93d8','#fff176','#f48fb1'];
+  for (let i = 0; i < 55; i++) {
+    const d = document.createElement('div');
+    d.className = 'dot';
+    const size = Math.random() * 10 + 5;
+    d.style.cssText = `
+      width:${size}px; height:${size}px;
+      background:${colors[Math.floor(Math.random()*colors.length)]};
+      left:${Math.random()*100}%;
+      animation-duration:${Math.random()*6+5}s;
+      animation-delay:${Math.random()*8}s;
+      border-radius:${Math.random()>0.5?'50%':'3px'};
+    `;
+    wrap.appendChild(d);
+  }
+
+  /* ── SCROLL REVEAL ── */
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  /* ── PHOTO UPLOAD ── */
+  document.getElementById('photoUpload').addEventListener('change', function() {
+    const grid = document.getElementById('photoGrid');
+    // Remove placeholders on first real upload
+    grid.querySelectorAll('.photo-card').forEach(c => {
+      if (c.querySelector('.photo-placeholder')) c.remove();
+    });
+    [...this.files].forEach((file, i) => {
+      const url = URL.createObjectURL(file);
+      const card = document.createElement('div');
+      card.className = 'photo-card reveal visible';
+      card.innerHTML = `
+        <img src="${url}" alt="Memory ${i+1}">
+        <div class="photo-caption">✨ </div>
+      `;
+      grid.appendChild(card);
+    });
+  });
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+</body></html>
